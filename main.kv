@@ -1,0 +1,417 @@
+#: import md_icons kivymd.icon_definitions.md_icons
+MDScreen:
+    MDBoxLayout:
+        orientation:'vertical'
+        MDToolbar:
+            title:"KivyMD File Manager"
+            left_action_items:[["menu",lambda x:None]]
+            right_action_items:[["magnify",lambda x:None]]
+        MDBottomNavigation:
+            panel_color:.2,.2,.2,1
+            MDBottomNavigationItem:
+                name:"storage screen"
+                text:"Storage"
+                icon:'database'
+                MDScreen:
+                    ScrollView:
+                        bar_width:0
+                        MDBoxLayout:
+                            orientation:'vertical'
+                            padding:'20dp'
+                            adaptive_height:True
+                            spacing:'20dp'
+                            MDCard:
+                                size_hint_y:None
+                                height:'285dp'
+                                radius:25
+                                MDBoxLayout:
+                                    size_hint_y:None
+                                    height:'180dp'
+                                    canvas.after:
+                                        Color:
+                                            rgba:.2,.2,.2,.6
+                                        Line:
+                                            width:dp(5)
+                                            circle:(self.center_x,self.parent.center_y+dp(35),min(self.width,self.height)/2)
+                                        Color:
+                                            rgba:.4,.77,.6,1
+                                        Line:
+                                            width:dp(8)
+                                            circle:(self.center_x,self.parent.center_y+dp(35),min(self.width,self.height)/2,0,120)
+
+                                        Color:
+                                            rgba:.2,.2,.2,.6
+                                        Line:
+                                            width:dp(5)
+                                            circle:(self.center_x,self.parent.center_y+dp(35),min(self.width,self.height)/3.5,)
+
+                                        Color:
+                                            rgba:.77,.8,.4,1
+                                        Line:
+                                            width:dp(8)
+                                            circle:(self.center_x,self.parent.center_y+dp(35),min(self.width,self.height)/3.5,0,34)
+                                    MDBoxLayout:
+                                        adaptive_height:True
+                                        padding:'15dp'
+                                        orientation:'vertical'
+                                        MDLabel:
+                                            markup:True
+                                            adaptive_height:True
+                                            text:f"[font=Icons][color=#66C499]{md_icons['card']}[/color][/font] Device Storage 51.41 of 128 GB (40 %)"
+                                        MDLabel:
+                                            markup:True
+                                            adaptive_height:True
+                                            text:f"[font=Icons][color=#C4CC66]{md_icons['card']}[/color][/font] SD Card 0.356 of 4 GB (9 %)"
+                            MDLabel:
+                                text:'CLEAN STORAGE'
+                                font_style:"Subtitle2"
+                            MDCard:
+                                size_hint_y:None
+                                height:'250dp'
+                                radius:25
+                                padding:'15dp'
+                                spacing:'10dp'
+                                orientation:'vertical'
+                                MDScreen:
+                                    Image:
+                                        source:'images/data-cleaning.png'
+                                        pos_hint:{'center_x':.5,'center_y':.5}
+                                MDBoxLayout:
+                                    orientation:'vertical'
+                                    spacing:'10dp'
+                                    MDLabel:
+                                        text:'Junk Files'
+                                        font_style:'H6'
+                                        adaptive_height:True
+                                        halign:'center'
+                                    MDLabel:
+                                        text:'Temporary app files taking up space'
+                                        halign:'center'
+                                        font_style:'Caption'
+                                        adaptive_height:True
+                                    MDFillRoundFlatButton:
+                                        text:'Clean'
+                                        pos_hint:{'center_x':.5,'center_y':.5}
+                            MDCard:
+                                size_hint_y:None
+                                height:'250dp'
+                                radius:25
+                                padding:'15dp'
+                                spacing:'15dp'
+                                orientation:'vertical'
+                                MDBoxLayout:
+                                    spacing:'7.5dp'
+                                    Image:
+                                        source:'images/african-lion.png'
+                                    Image:
+                                        source:'images/robin.png'
+                                    Image:
+                                        source:'images/light-bulb.png'
+                                MDBoxLayout:
+                                    orientation:'vertical'
+                                    spacing:'10dp'
+                                    MDLabel:
+                                        text:'Delete Blurry Photos'
+                                        adaptive_height:True
+                                        font_style:'H6'
+                                        halign:'center'
+
+                                    MDLabel:
+                                        text:'4 MB, 12 Files'
+                                        font_style:'Caption'
+                                        adaptive_height:True
+                                        halign:'center'
+                                    MDRectangleFlatButton:
+                                        markup:True
+                                        pos_hint:{'center_x':.5,'center_y':.5}
+                                        text:f"Select Files [font=Icons]{md_icons['arrow-right']}[/font]"
+
+                            MDCard:
+                                size_hint_y:None
+                                height:'250dp'
+                                radius:25
+                                padding:'15dp'
+                                spacing:'15dp'
+                                orientation:'vertical'
+                                MDBoxLayout:
+                                    spacing:'7.5dp'
+                                    Image:
+                                        source:'images/african-lion.png'
+                                    Image:
+                                        source:'images/african-lion.png'
+                                    Image:
+                                        source:'images/african-lion.png'
+                                MDBoxLayout:
+                                    orientation:'vertical'
+                                    spacing:'10dp'
+                                    MDLabel:
+                                        text:'Delete Duplicated Files'
+                                        adaptive_height:True
+                                        font_style:'H6'
+                                        halign:'center'
+
+                                    MDLabel:
+                                        text:'2 MB, 3 Files'
+                                        font_style:'Caption'
+                                        adaptive_height:True
+                                        halign:'center'
+                                    MDRectangleFlatButton:
+                                        markup:True
+                                        pos_hint:{'center_x':.5,'center_y':.5}
+                                        text:f"Select Files [font=Icons]{md_icons['arrow-right']}[/font]"
+
+
+                            MDCard:
+                                size_hint_y:None
+                                height:'255dp'
+                                radius:25
+                                padding:'15dp'
+                                spacing:'10dp'
+                                orientation:'vertical'
+                                MDBoxLayout:
+                                    spacing:'15dp'
+                                    Image:
+                                        source:'icons/dropbox.ico'
+                                    Image:
+                                        source:'icons/google-drive.ico'
+                                MDBoxLayout:
+                                    orientation:'vertical'
+                                    spacing:'10dp'
+                                    MDLabel:
+                                        text:'Move Files to Clouds Storage'
+                                        adaptive_height:True
+                                        font_style:'H6'
+                                        halign:'center'
+
+                                    MDLabel:
+                                        text:'Dropbox 5 GB Free, Google Drive 10 GB Free'
+                                        font_style:'Caption'
+                                        adaptive_height:True
+                                        halign:'center'
+                                    MDRectangleFlatButton:
+                                        markup:True
+                                        pos_hint:{'center_x':.5,'center_y':.5}
+                                        text:f"Select Files [font=Icons]{md_icons['arrow-right']}[/font]"
+
+
+
+
+
+
+
+            MDBottomNavigationItem:
+                name:"browse screen"
+                text:"Browse"
+                icon:'folder-search-outline'
+                MDScreen:
+                    ScrollView:
+                        bar_width:0
+                        MDBoxLayout:
+                            orientation:'vertical'
+                            adaptive_height:True
+                            spacing:'20dp'
+                            padding:'20dp'
+                            MDLabel:
+                                text:'RECENTLY'
+                                font_style:"Subtitle2"
+                            ScrollView:
+                                size_hint_y:None
+                                height:'160dp'
+                                bar_width:0
+                                MDBoxLayout:
+                                    adaptive_width:True
+                                    spacing:'15dp'
+                                    CustomImageTile:
+                                        source:"images/guitar.png"
+                                        text:'[size=46]guitar[/size]\n[size=26]guitar.png[/size]'
+                                    CustomImageTile:
+                                        source:"images/Latte.jpg"
+                                        text:'[size=46]Latte[/size]\n[size=26]Latte.jpg[/size]'
+                                    CustomImageTile:
+                                        source:"images/light-bulb.png"
+                                        text:'[size=46]light-bulb[/size]\n[size=26]light-bulb.png[/size]'
+                                    CustomImageTile:
+                                        source:"images/kitten.png"
+                                        text:'[size=46]kitten[/size]\n[size=26]kitten.png[/size]'
+                            MDLabel:
+                                text:'CATEGORIES'
+                                font_style:"Subtitle2"
+                            MDGridLayout:
+                                cols:2
+                                adaptive_height:True
+                                spacing:"15dp"
+                                GridCard:
+                                    source:'icons/downloads-folder.ico'
+                                    text:'Downloads'
+                                    folder_size:'82 MB'
+                                GridCard:
+                                    source:'icons/images-folder.ico'
+                                    text:'Images'
+                                    folder_size:'434 MB'
+                                GridCard:
+                                    source:'icons/videos-folder.ico'
+                                    text:'Videos'
+                                    folder_size:'2.9 GB'
+                                GridCard:
+                                    source:'icons/audios-folder.ico'
+                                    text:'Audios'
+                                    folder_size:'384 MB'
+                                GridCard:
+                                    source:'icons/documents-folder.ico'
+                                    text:'Documents'
+                                    folder_size:'49 MB'
+                                GridCard:
+                                    source:'icons/app-folder.ico'
+                                    text:'Apps'
+                                    folder_size:'20 GB'
+                            MDLabel:
+                                text:'COLLECTIONS'
+                                font_style:"Subtitle2"
+                            MDBoxLayout:
+                                size_hint_y:None
+                                height:'85dp'
+                                spacing:'15dp'
+                                MDCard:
+                                    ripple_behavior:True
+                                    orientation:'vertical'
+                                    radius:15
+                                    padding:'15dp'
+                                    adaptive_height:True
+                                    MDIconButton:
+                                        pos_hint:{'center_x':.5,'center_y':.5}
+                                        icon:'star'
+                                        theme_text_color:'Custom'
+                                        text_color:1,1,0,1
+                                    MDLabel:
+                                        text:'Favorite'
+                                        halign:'center'
+                                        adaptive_height:True
+                                MDCard:
+                                    ripple_behavior:True
+                                    orientation:'vertical'
+                                    radius:15
+                                    padding:'15dp'
+                                    adaptive_height:True
+                                    MDIconButton:
+                                        pos_hint:{'center_x':.5,'center_y':.5}
+                                        icon:'lock'
+                                    MDLabel:
+                                        text:'Security Folder'
+                                        halign:'center'
+                                        adaptive_height:True
+                            MDLabel:
+                                text:'CLOUD STORAGE'
+                                font_style:"Subtitle2"
+                            MDBoxLayout:
+                                size_hint_y:None
+                                height:'155dp'
+                                spacing:'15dp'
+                                GridCard:
+                                    source:'icons/google-drive.ico'
+                                    text:'Google Drive'
+                                    folder_size:'10 GB Free'
+                                GridCard:
+                                    source:'icons/dropbox.ico'
+                                    text:'Dropbox'
+                                    folder_size:'5 GB Free'
+                            MDLabel:
+                                text:'INTERNAL STORAGE'
+                                font_style:"Subtitle2"
+                            MDBoxLayout:
+                                size_hint_y:None
+                                height:'125dp'
+                                spacing:'15dp'
+                                MDCard:
+                                    ripple_behavior:True
+                                    orientation:'vertical'
+                                    radius:15
+                                    padding:'15dp'
+                                    adaptive_height:True
+                                    MDIconButton:
+                                        pos_hint:{'center_x':.5}
+                                        icon:'cellphone-android'
+                                    MDLabel:
+                                        text:'Device Storage'
+                                        adaptive_height:True
+                                        halign:'center'
+                                    MDLabel:
+                                        text:'83 GB Free'
+                                        adaptive_height:True
+                                        font_style:'Caption'
+                                        halign:'center'
+                                MDCard:
+                                    ripple_behavior:True
+                                    orientation:'vertical'
+                                    radius:15
+                                    padding:'15dp'
+                                    adaptive_height:True
+                                    MDIconButton:
+                                        pos_hint:{'center_x':.5}
+                                        icon:'sd'
+                                    MDLabel:
+                                        text:'SD Card'
+                                        adaptive_height:True
+                                        halign:'center'
+                                    MDLabel:
+                                        text:'3.6 GB Free'
+                                        adaptive_height:True
+                                        font_style:'Caption'
+                                        halign:'center'
+
+
+
+
+
+            MDBottomNavigationItem:
+                name:"share screen"
+                text:"Share"
+                icon:'share-variant'
+                MDScreen:
+                    MDBoxLayout:
+                        pos_hint:{'center_x':.5,'center_y':.5}
+                        orientation:'vertical'
+                        size_hint_y:.4
+                        size_hint_x:.4
+                        spacing:'40dp'
+                        Image:
+                            source:'images/file-transfer.png'
+                        MDBoxLayout:
+                            pos_hint:{'center_x':.5,'center_y':.5}
+                            adaptive_size:True
+                            spacing:'20dp'
+                            MDFillRoundFlatButton:
+                                text:' SEND  '
+                            MDFillRoundFlatButton:
+                                text:'RECEIVE'
+
+<CustomImageTile@SmartTileWithLabel>:
+    size_hint_y:None
+    size_hint_x:None
+    height:'160dp'
+    width:'160dp'
+<GridCard@MDCard>:
+    ripple_behavior:True
+    orientation:'vertical'
+    source:''
+    radius:25
+    folder_size:''
+    text:''
+    padding:'20dp'
+    spacing:'20dp'
+    size_hint_y:None
+    height:'150dp'
+    Image:
+        source:root.source
+    MDBoxLayout:
+        orientation:'vertical'
+        adaptive_height:True
+        MDLabel:
+            text:root.folder_size
+            adaptive_height:True
+            halign:'center'
+            font_style:'Caption'
+        MDLabel:
+            text:root.text
+            adaptive_height:True
+            halign:'center'
+
